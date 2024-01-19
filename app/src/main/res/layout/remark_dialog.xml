@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="@dimen/margin_large"
+    app:cardCornerRadius="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add your remark"
+            android:textColor="@color/black"
+            android:layout_marginBottom="@dimen/margin_medium_2"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/etRemark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_medium_3"
+            android:gravity="top"
+            android:textSize="16sp"
+            android:padding="@dimen/margin_card_medium_2"
+            android:lines="5"
+            android:background="@drawable/background_edit_text" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:gravity="center_vertical">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnCancel"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_medium_2"
+            android:background="@drawable/background_stroke_button"
+            android:text="Cancel"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnConfirm"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:padding="18dp"
+            android:text="Add"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/primary_color"/>
+
+    </FrameLayout>
+
+
+</LinearLayout>

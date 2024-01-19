@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.HomeActivity">
+
+    <FrameLayout
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@color/primary_color">
+
+        <ImageView
+            android:id="@+id/textView6"
+            android:layout_width="180dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+            app:srcCompat="@drawable/logo" />
+
+    </FrameLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardInventoryReport"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginStart="@dimen/margin_medium_3"
+        android:layout_marginTop="-55dp"
+        android:layout_marginEnd="@dimen/margin_medium_3"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:weightSum="7">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:src="@drawable/ic_inventory_report" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3.5"
+                android:paddingStart="@dimen/margin_medium"
+                android:text="Inventory Report"
+                android:textColor="@color/accent_color"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_weight="1.5"
+                android:src="@drawable/ic_arrow_forward" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardAddProduct"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="@dimen/margin_medium_3"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            android:layout_marginRight="@dimen/margin_medium_3"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="7">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:src="@drawable/ic_add_product" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3.5"
+                    android:paddingStart="@dimen/margin_medium"
+                    android:text="Add Product"
+                    android:textColor="@color/accent_color"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/margin_medium_3"
+                    android:layout_weight="1.5"
+                    android:src="@drawable/ic_arrow_forward" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardSellingProduct"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="@dimen/margin_medium_3"
+            android:layout_marginTop="@dimen/margin_medium_3"
+            android:layout_marginRight="@dimen/margin_medium_3"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="7">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:src="@drawable/ic_selling_product" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3.5"
+                    android:paddingStart="@dimen/margin_medium"
+                    android:text="Sell Product"
+                    android:textColor="@color/accent_color"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/margin_medium_3"
+                    android:layout_weight="1.5"
+                    android:src="@drawable/ic_arrow_forward" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+</LinearLayout>
