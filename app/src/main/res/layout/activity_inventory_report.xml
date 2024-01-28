@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/background"
+    android:background="@color/colorBackground"
     tools:context=".view.productReport.InventoryReportActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/primary_color">
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_medium_2"
                 android:text="@string/lbl_inventory_report"
-                android:textColor="@color/accent_color"
+                android:textColor="@color/colorAccent"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -54,14 +54,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparentBackground"
-                android:textColor="@color/link_color"
+                android:textColor="@color/colorLink"
                 android:textStyle="bold"
                 android:drawableLeft="@drawable/excel"
                 android:layout_gravity="end"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginRight="20dp"
-                android:drawablePadding="10dp"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginRight="@dimen/margin_medium_2"
+                android:drawablePadding="@dimen/margin_card_medium_2"
                 android:text="Export Excel File" />
 
             <androidx.recyclerview.widget.RecyclerView
@@ -69,11 +68,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:nestedScrollingEnabled="true"
-                tools:listitem="@layout/inventory_report_list_item"/>
+                android:paddingBottom="@dimen/margin_medium_2"
+                android:clipToPadding="false"
+                tools:listitem="@layout/view_holder_inventory_report"/>
 
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
-
 
 </LinearLayout>

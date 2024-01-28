@@ -71,7 +71,7 @@ class CustomAutoCompleteAdapter(
         val holder: ViewHolder
 
         if (view == null) {
-            view = LayoutInflater.from(context).inflate(R.layout.autocomplete_item, parent, false)
+            view = LayoutInflater.from(context).inflate(R.layout.view_item_autocomplete, parent, false)
             holder = ViewHolder()
             holder.textView = view.findViewById(R.id.text_view)
             holder.imageView = view.findViewById(R.id.image_view)

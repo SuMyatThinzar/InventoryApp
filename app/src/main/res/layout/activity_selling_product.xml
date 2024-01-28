@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/background"
+    android:background="@color/colorBackground"
     tools:context=".view.productSell.SellingProductActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/primary_color">
+        android:background="@color/colorPrimary">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_medium_2"
                 android:text="@string/lbl_selling_product"
-                android:textColor="@color/accent_color"
+                android:textColor="@color/colorAccent"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -80,7 +80,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center_vertical"
-                            android:textColor="@color/accent_color"
+                            android:textColor="@color/colorAccent"
                             android:textStyle="bold"
                             android:textSize="15sp"
                             android:text="Date" />
@@ -102,7 +102,7 @@
                         android:layout_marginTop="12dp"
                         android:gravity="center_vertical"
                         android:textSize="15sp"
-                        android:textColor="@color/accent_color"
+                        android:textColor="@color/colorAccent"
                         android:background="@drawable/border_background"
                         android:text="TextView"
                         app:drawableRightCompat="@drawable/ic_date_picker" />
@@ -125,7 +125,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center_vertical"
-                            android:textColor="@color/accent_color"
+                            android:textColor="@color/colorAccent"
                             android:textStyle="bold"
                             android:textSize="15sp"
                             android:text="Customer Name" />
@@ -166,7 +166,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center_vertical"
-                            android:textColor="@color/accent_color"
+                            android:textColor="@color/colorAccent"
                             android:textStyle="bold"
                             android:textSize="15sp"
                             android:text="Product Code" />
@@ -206,7 +206,7 @@
                             android:layout_height="wrap_content"
                             android:text="No Product Found."
                             android:textStyle="bold"
-                            android:textColor="@color/error" />
+                            android:textColor="@color/colorError" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -238,7 +238,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-                    android:textColor="@color/accent_color"
+                    android:textColor="@color/colorAccent"
                     android:layout_marginTop="15dp"
                     android:visibility="gone"
                     android:textStyle="bold"
@@ -260,7 +260,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center_vertical"
-                            android:textColor="@color/accent_color"
+                            android:textColor="@color/colorAccent"
                             android:textStyle="bold"
                             android:textSize="15sp"
                             android:text="Quantity" />
@@ -301,7 +301,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center_vertical"
-                            android:textColor="@color/accent_color"
+                            android:textColor="@color/colorAccent"
                             android:textStyle="bold"
                             android:textSize="15sp"
                             android:text="Price" />
@@ -341,7 +341,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp"
-                    android:backgroundTint="@color/primary_color"
+                    android:backgroundTint="@color/colorPrimary"
                     android:text="Save"
                     android:textColor="@color/black"
                     app:cornerRadius="5dp" />

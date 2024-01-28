@@ -6,15 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.aristo.empressinventory.data.vos.ProductVO
+import com.aristo.empressinventory.databinding.ViewHolderInventoryReportBinding
 import com.aristo.empressinventory.view.productReport.InventoryReportActivity
-import com.aristo.empressinventory.databinding.InventoryReportListItemBinding
 
 class ContainerListAdapter : RecyclerView.Adapter<ContainerListAdapter.ContainerListViewHolder>() {
 
     private var containerList: List<String> = listOf()
     private var productList: ArrayList<ProductVO> = arrayListOf()
 
-    class ContainerListViewHolder(private var binding: InventoryReportListItemBinding) : RecyclerView.ViewHolder(binding.root){
+    class ContainerListViewHolder(private var binding: ViewHolderInventoryReportBinding) : RecyclerView.ViewHolder(binding.root){
 
         fun bindData(price: String, cusList: ArrayList<ProductVO>) {
 
@@ -33,7 +33,7 @@ class ContainerListAdapter : RecyclerView.Adapter<ContainerListAdapter.Container
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContainerListViewHolder {
-        val binding = InventoryReportListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = ViewHolderInventoryReportBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ContainerListViewHolder(binding)
     }
 

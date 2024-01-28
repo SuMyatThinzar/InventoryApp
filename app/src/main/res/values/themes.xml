@@ -1,4 +1,10 @@
 <resources>
     <style name="Theme.EmpressInventory" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" >@color/colorPrimary</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 </resources>

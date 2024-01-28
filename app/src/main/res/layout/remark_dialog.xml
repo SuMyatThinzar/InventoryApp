@@ -55,7 +55,7 @@
             android:padding="18dp"
             android:text="Add"
             android:textColor="@color/black"
-            android:backgroundTint="@color/primary_color"/>
+            android:backgroundTint="@color/colorPrimary"/>
 
     </FrameLayout>
 

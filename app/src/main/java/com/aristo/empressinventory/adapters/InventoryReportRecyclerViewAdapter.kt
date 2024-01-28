@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.aristo.empressinventory.data.vos.ProductVO
 import com.aristo.empressinventory.R
 import com.aristo.empressinventory.view.productReport.ReportDetailActivity
-import com.aristo.empressinventory.databinding.InventoryReportListItemBinding
+import com.aristo.empressinventory.databinding.ViewHolderInventoryReportBinding
 import com.bumptech.glide.Glide
 import java.util.Locale
 
@@ -21,7 +21,7 @@ class InventoryReportRecyclerViewAdapter :
     private var originalList: ArrayList<ProductVO> = arrayListOf()
     private var filteredList: ArrayList<ProductVO> = originalList
 
-    class InventoryReportRecyclerViewHolder(private val binding: InventoryReportListItemBinding) :
+    class InventoryReportRecyclerViewHolder(private val binding: ViewHolderInventoryReportBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bindData(product: ProductVO) {
@@ -51,7 +51,7 @@ class InventoryReportRecyclerViewAdapter :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): InventoryReportRecyclerViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = InventoryReportListItemBinding.inflate(inflater, parent, false)
+        val binding = ViewHolderInventoryReportBinding.inflate(inflater, parent, false)
         return InventoryReportRecyclerViewHolder(binding)
     }
 

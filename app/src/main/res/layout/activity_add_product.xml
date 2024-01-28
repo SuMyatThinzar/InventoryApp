@@ -5,13 +5,13 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="@color/background"
+    android:background="@color/colorBackground"
     tools:context=".view.productAdd.AddProductActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/primary_color">
+        android:background="@color/colorPrimary">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_medium_2"
                 android:text="@string/lbl_add_product"
-                android:textColor="@color/accent_color"
+                android:textColor="@color/colorAccent"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -79,7 +79,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center_vertical"
-                            android:textColor="@color/accent_color"
+                            android:textColor="@color/colorAccent"
                             android:textStyle="bold"
                             android:textSize="15sp"
                             android:text="@string/lbl_product_code" />
@@ -119,7 +119,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center_vertical"
-                            android:textColor="@color/accent_color"
+                            android:textColor="@color/colorAccent"
                             android:textStyle="bold"
                             android:textSize="15sp"
                             android:text="@string/lbl_container_no" />
@@ -159,7 +159,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center_vertical"
-                            android:textColor="@color/accent_color"
+                            android:textColor="@color/colorAccent"
                             android:textStyle="bold"
                             android:textSize="15sp"
                             android:text="@string/lbl_quantity" />
@@ -199,7 +199,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp"
-                    android:backgroundTint="@color/primary_color"
+                    android:backgroundTint="@color/colorPrimary"
                     android:text="@string/lbl_save"
                     android:textColor="@color/black"
                     app:cornerRadius="5dp" />

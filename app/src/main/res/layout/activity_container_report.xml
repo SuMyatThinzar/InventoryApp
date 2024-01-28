@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/background"
+    android:background="@color/colorBackground"
     tools:context=".view.productReport.ContainerReportActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/toolbar"
-        android:background="@color/primary_color"
+        android:background="@color/colorPrimary"
         android:theme="@style/Base.Theme.EmpressInventory">
 
         <RelativeLayout
@@ -37,7 +37,7 @@
                 android:textStyle="bold"
                 android:layout_toEndOf="@id/backButton"
                 android:layout_marginStart="8dp"
-                android:textColor="@color/accent_color"/>
+                android:textColor="@color/colorAccent"/>
         </RelativeLayout>
 
     </androidx.appcompat.widget.Toolbar>
@@ -52,7 +52,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:nestedScrollingEnabled="true"
-                tools:listitem="@layout/inventory_report_list_item"/>
+                tools:listitem="@layout/view_holder_inventory_report"/>
 
 
 </LinearLayout>

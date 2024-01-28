@@ -4,21 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBackground"
     android:orientation="vertical"
     tools:context=".view.HomeActivity">
 
     <FrameLayout
         android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:background="@color/primary_color">
+        android:layout_height="275dp"
+        android:background="@color/colorPrimary">
 
         <ImageView
             android:id="@+id/textView6"
-            android:layout_width="180dp"
-            android:layout_height="150dp"
+            android:layout_width="185dp"
+            android:layout_height="160dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="@dimen/margin_xlarge"
             app:srcCompat="@drawable/logo" />
 
     </FrameLayout>
@@ -28,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginStart="@dimen/margin_medium_3"
-        android:layout_marginTop="-55dp"
+        android:layout_marginTop="-45dp"
         android:layout_marginEnd="@dimen/margin_medium_3"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="5dp"
@@ -39,6 +40,7 @@
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:orientation="horizontal"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:weightSum="7">
 
             <ImageView
@@ -53,7 +55,7 @@
                 android:layout_weight="3.5"
                 android:paddingStart="@dimen/margin_medium"
                 android:text="Inventory Report"
-                android:textColor="@color/accent_color"
+                android:textColor="@color/colorAccent"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -70,16 +72,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin_xlarge"
         android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardAddProduct"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_marginLeft="@dimen/margin_medium_3"
+            android:layout_height="90dp"
             android:layout_marginTop="@dimen/margin_xlarge"
+            android:layout_marginLeft="@dimen/margin_medium_3"
             android:layout_marginRight="@dimen/margin_medium_3"
-            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="5dp"
             app:cardElevation="5dp">
 
@@ -88,6 +90,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
+                android:background="?attr/selectableItemBackground"
                 android:weightSum="7">
 
                 <ImageView
@@ -102,7 +105,7 @@
                     android:layout_weight="3.5"
                     android:paddingStart="@dimen/margin_medium"
                     android:text="Add Product"
-                    android:textColor="@color/accent_color"
+                    android:textColor="@color/colorAccent"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -119,9 +122,9 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cardSellingProduct"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="90dp"
             android:layout_marginLeft="@dimen/margin_medium_3"
-            android:layout_marginTop="@dimen/margin_medium_3"
+            android:layout_marginTop="@dimen/margin_large"
             android:layout_marginRight="@dimen/margin_medium_3"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="5dp"
@@ -132,6 +135,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
+                android:background="?attr/selectableItemBackground"
                 android:weightSum="7">
 
                 <ImageView
@@ -146,7 +150,7 @@
                     android:layout_weight="3.5"
                     android:paddingStart="@dimen/margin_medium"
                     android:text="Sell Product"
-                    android:textColor="@color/accent_color"
+                    android:textColor="@color/colorAccent"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -160,6 +164,12 @@
 
         </androidx.cardview.widget.CardView>
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/margin_medium_3"/>
 
     </LinearLayout>
 

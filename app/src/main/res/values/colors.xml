@@ -4,11 +4,11 @@
     <color name="white">#FFFFFFFF</color>
     <color name="grey">#8C8C8C</color>
 
-    <color name="primary_color">#FFE0AD</color>
-    <color name="accent_color">#543400</color>
-    <color name="payment_color">#107C41</color>
-    <color name="link_color">#3175E0</color>
-    <color name="background">#F4F4F4</color>
-    <color name="error">#EF2E2E</color>
+    <color name="colorPrimary">#FFE0AD</color>
+    <color name="colorAccent">#543400</color>
+    <color name="colorPayment">#107C41</color>
+    <color name="colorLink">#3175E0</color>
+    <color name="colorBackground">#F4F4F4</color>
+    <color name="colorError">#EF2E2E</color>
     <color name="transparentBackground">#00F4F4F4</color>
 </resources>

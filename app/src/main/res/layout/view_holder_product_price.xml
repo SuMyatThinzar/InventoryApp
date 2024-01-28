@@ -10,7 +10,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cvCollapsedVoucher"
         android:layout_width="match_parent"
-        android:backgroundTint="@color/primary_color"
+        android:backgroundTint="@color/colorPrimary"
         android:layout_marginTop="@dimen/margin_small"
         android:layout_marginBottom="@dimen/margin_medium"
         app:cardCornerRadius="10dp"
@@ -29,7 +29,7 @@
                 android:layout_marginTop="@dimen/margin_medium_3"
                 android:layout_marginEnd="@dimen/margin_xxlarge"
                 android:text="13100 MMK"
-                android:textColor="@color/accent_color"
+                android:textColor="@color/colorAccent"
                 android:textSize="16sp"
                 android:textStyle="bold"/>
 
@@ -42,7 +42,7 @@
                 android:layout_marginBottom="@dimen/margin_medium_3"
                 android:layout_marginEnd="@dimen/margin_xxlarge"
                 android:text="(Sold Qty : 45 pcs)"
-                android:textColor="@color/accent_color"
+                android:textColor="@color/colorAccent"
                 android:textSize="16sp"
                 android:textStyle="bold"/>
 
@@ -74,7 +74,7 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/primary_color">
+            android:background="@color/colorPrimary">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -89,7 +89,7 @@
                     android:layout_marginTop="@dimen/margin_medium_3"
                     android:layout_marginEnd="@dimen/margin_xxlarge"
                     android:text="13100 MMK"
-                    android:textColor="@color/accent_color"
+                    android:textColor="@color/colorAccent"
                     android:textSize="16sp"
                     android:textStyle="bold"/>
 
@@ -102,7 +102,7 @@
                     android:layout_marginBottom="@dimen/margin_medium_3"
                     android:layout_marginEnd="@dimen/margin_xxlarge"
                     android:text="(Sold Qty : 45 pcs)"
-                    android:textColor="@color/accent_color"
+                    android:textColor="@color/colorAccent"
                     android:textSize="16sp"
                     android:textStyle="bold"/>
 

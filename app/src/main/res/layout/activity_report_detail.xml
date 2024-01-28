@@ -9,8 +9,8 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:background="@color/primary_color">
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -19,10 +19,10 @@
 
             <ImageButton
                 android:id="@+id/ib_back"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="@dimen/margin_small"
-                android:background="@color/primary_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/baseline_arrow_back" />
 
             <TextView
@@ -54,7 +54,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/background">
+        android:background="@color/colorBackground">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -127,7 +127,7 @@
                             android:layout_weight="1"
                             android:layout_marginTop="@dimen/margin_medium_2"
                             android:text="Total Qty"
-                            android:textColor="@color/accent_color"/>
+                            android:textColor="@color/colorAccent"/>
                         <TextView
                             android:id="@+id/tvTotalQty"
                             android:layout_width="match_parent"
@@ -136,7 +136,7 @@
                             android:layout_weight="1"
                             android:layout_marginBottom="@dimen/margin_medium_2"
                             android:text="1500"
-                            android:textColor="@color/accent_color"
+                            android:textColor="@color/colorAccent"
                             android:textSize="16sp"
                             android:textStyle="bold"/>
                     </LinearLayout>
@@ -161,7 +161,7 @@
                             android:layout_weight="1"
                             android:layout_marginTop="@dimen/margin_medium_2"
                             android:text="Sold Qty"
-                            android:textColor="@color/accent_color"/>
+                            android:textColor="@color/colorAccent"/>
                         <TextView
                             android:id="@+id/tvSoldQty"
                             android:layout_width="match_parent"
@@ -170,7 +170,7 @@
                             android:layout_weight="1"
                             android:layout_marginBottom="@dimen/margin_medium_2"
                             android:text="1481"
-                            android:textColor="@color/accent_color"
+                            android:textColor="@color/colorAccent"
                             android:textSize="16sp"
                             android:textStyle="bold"/>
                     </LinearLayout>
@@ -197,7 +197,7 @@
                             android:layout_weight="1"
                             android:layout_marginTop="@dimen/margin_medium_2"
                             android:text="Remaining Qty"
-                            android:textColor="@color/accent_color"/>
+                            android:textColor="@color/colorAccent"/>
                         <TextView
                             android:id="@+id/tvRemainingQty"
                             android:layout_width="match_parent"
@@ -206,7 +206,7 @@
                             android:layout_weight="1"
                             android:layout_marginBottom="@dimen/margin_medium_2"
                             android:text="19"
-                            android:textColor="@color/accent_color"
+                            android:textColor="@color/colorAccent"
                             android:textSize="16sp"
                             android:textStyle="bold"/>
                     </LinearLayout>

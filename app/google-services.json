@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "14679237743",
-    "project_id": "empressinventory",
-    "storage_bucket": "empressinventory.appspot.com"
+    "project_number": "167324983094",
+    "project_id": "inventoryapp-81fa4",
+    "storage_bucket": "inventoryapp-81fa4.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:14679237743:android:0f8a207f25c7ca4137599a",
+        "mobilesdk_app_id": "1:167324983094:android:6bc3dd53df17f906405d97",
         "android_client_info": {
           "package_name": "com.aristo.empressinventory"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAxJpYwKY6z_-oqcjymizg3VRXGSKm3kRE"
+          "current_key": "AIzaSyAKesgum6kN_zAye6PFRFbCiTufEYnFwFI"
         }
       ],
       "services": {
