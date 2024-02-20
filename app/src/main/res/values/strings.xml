@@ -7,4 +7,5 @@
     <string name="lbl_container_no">Container No</string>
     <string name="lbl_quantity">Quantity</string>
     <string name="lbl_save">Save</string>
+    <string name="lbl_export_excel_file">Export Excel File</string>
 </resources>

@@ -23,8 +23,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_medium_2"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/ic_back_arrow"/>
+                android:src="@drawable/ic_back_arrow"
+                android:background="?attr/selectableItemBackgroundBorderless" />
 
             <TextView
                 android:id="@+id/textView"
@@ -50,10 +50,9 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/button"
+                android:id="@+id/btnExportExcel"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/transparentBackground"
+                android:layout_height="@dimen/margin_xxlarge"
                 android:textColor="@color/colorLink"
                 android:textStyle="bold"
                 android:drawableLeft="@drawable/excel"
@@ -61,7 +60,8 @@
                 android:layout_marginTop="@dimen/margin_medium"
                 android:layout_marginRight="@dimen/margin_medium_2"
                 android:drawablePadding="@dimen/margin_card_medium_2"
-                android:text="Export Excel File" />
+                android:text="@string/lbl_export_excel_file"
+                android:background="?attr/selectableItemBackground" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvInventoryReport"

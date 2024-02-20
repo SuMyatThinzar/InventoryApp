@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "167324983094",
+    "firebase_url": "https://inventoryapp-81fa4-default-rtdb.firebaseio.com",
     "project_id": "inventoryapp-81fa4",
     "storage_bucket": "inventoryapp-81fa4.appspot.com"
   },

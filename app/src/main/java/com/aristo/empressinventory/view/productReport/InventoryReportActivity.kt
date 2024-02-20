@@ -1,15 +1,19 @@
 package com.aristo.empressinventory.view.productReport
 
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
+import android.view.View
 import androidx.appcompat.widget.SearchView
+import androidx.core.content.FileProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.aristo.empressinventory.data.vos.ProductVO
 import com.aristo.empressinventory.R
 import com.aristo.empressinventory.adapters.InventoryReportRecyclerViewAdapter
 import com.aristo.empressinventory.databinding.ActivityInventoryReportBinding
-import com.aristo.empressinventory.utils.showToastMessage
+import com.aristo.empressinventory.utils.*
 import com.aristo.empressinventory.view.AbstractBaseActivity
+import java.io.File
 
 class InventoryReportActivity : AbstractBaseActivity<ActivityInventoryReportBinding>() {
 
@@ -34,6 +38,18 @@ class InventoryReportActivity : AbstractBaseActivity<ActivityInventoryReportBind
         binding.ibBack.setOnClickListener {
             finish()
         }
+        binding.btnExportExcel.setOnClickListener {
+            val uniqueId = System.currentTimeMillis()
+            val outputFile = File(getExternalFilesDir(null), "$uniqueId product list.xlsx")
+            Log.d("adfasdfsfd", outputFile.absolutePath)
+
+            val message = exportToExcel(productList, outputFile)
+            showToastMessage(applicationContext, message)
+
+            createNotificationChannel(applicationContext)
+            createNotificationWithAction(applicationContext, "Export Complete", "The product list export process has finished.", outputFile.absolutePath)
+
+        }
     }
 
     private fun requestNetworkCall() {
@@ -49,6 +65,7 @@ class InventoryReportActivity : AbstractBaseActivity<ActivityInventoryReportBind
                             }
                         }
                     }
+                    binding.rvInventoryReport.visibility = View.VISIBLE
                     inventoryReportAdapter.updateData(productList)
                 }
             } else {

@@ -82,6 +82,7 @@
             android:layout_marginTop="@dimen/margin_xlarge"
             android:layout_marginLeft="@dimen/margin_medium_3"
             android:layout_marginRight="@dimen/margin_medium_3"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="5dp"
             app:cardElevation="5dp">
 
