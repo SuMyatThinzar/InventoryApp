@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EmpressInventory</string>
+    <string name="app_name">Inventory</string>
     <string name="lbl_selling_product">Selling Product</string>
     <string name="lbl_inventory_report">Inventory Report</string>
     <string name="lbl_add_product">Add Product</string>

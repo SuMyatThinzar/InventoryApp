@@ -1,11 +1,13 @@
 package com.aristo.empressinventory.view.productReport
 
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.View
 import androidx.appcompat.widget.SearchView
-import androidx.core.content.FileProvider
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.aristo.empressinventory.data.vos.ProductVO
 import com.aristo.empressinventory.R
@@ -13,7 +15,6 @@ import com.aristo.empressinventory.adapters.InventoryReportRecyclerViewAdapter
 import com.aristo.empressinventory.databinding.ActivityInventoryReportBinding
 import com.aristo.empressinventory.utils.*
 import com.aristo.empressinventory.view.AbstractBaseActivity
-import java.io.File
 
 class InventoryReportActivity : AbstractBaseActivity<ActivityInventoryReportBinding>() {
 
@@ -39,16 +40,33 @@ class InventoryReportActivity : AbstractBaseActivity<ActivityInventoryReportBind
             finish()
         }
         binding.btnExportExcel.setOnClickListener {
-            val uniqueId = System.currentTimeMillis()
-            val outputFile = File(getExternalFilesDir(null), "$uniqueId product list.xlsx")
-            Log.d("adfasdfsfd", outputFile.absolutePath)
 
-            val message = exportToExcel(productList, outputFile)
+            if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED
+            ) {
+                // Request the permission if not granted
+                ActivityCompat.requestPermissions(
+                    this,
+                    arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE),
+                    100
+                )
+            } else {
+                return@setOnClickListener
+            }
+
+            val uniqueId = System.currentTimeMillis()
+
+//            val outputFile = File(getExternalFilesDir(null), "$uniqueId product list.xlsx")
+//            Log.d("adfasdfsfd", outputFile.absolutePath)
+
+            val message = exportToExcel(productList, applicationContext, uniqueId)
             showToastMessage(applicationContext, message)
 
-            createNotificationChannel(applicationContext)
-            createNotificationWithAction(applicationContext, "Export Complete", "The product list export process has finished.", outputFile.absolutePath)
+            val filePath = getFilePath(applicationContext, uniqueId.toString())
 
+            createNotificationChannel(applicationContext)
+            createNotificationWithAction(applicationContext, "Export Complete", "The product list export process has finished.", filePath)
+//            createNotification(this, "Export Complete", "")
         }
     }
 
@@ -56,17 +74,8 @@ class InventoryReportActivity : AbstractBaseActivity<ActivityInventoryReportBind
         // update product list data from intent with realtime data
         mFirebaseRealtimeModel.getProductsData { isSuccess, data ->
             if (isSuccess) {
-                if (data != null && oldProductList != null) {
-                    productList.clear()
-                    data.forEach {
-                        oldProductList!!.forEach { product->
-                            if (it.id == product.id) {
-                                productList.add(it)
-                            }
-                        }
-                    }
-                    binding.rvInventoryReport.visibility = View.VISIBLE
-                    inventoryReportAdapter.updateData(productList)
+                if (data != null) {
+                    inventoryReportAdapter.updateData(data)
                 }
             } else {
                 showToastMessage(applicationContext, "Can't retrieve data")

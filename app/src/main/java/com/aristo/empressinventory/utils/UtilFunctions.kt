@@ -4,11 +4,13 @@ import android.Manifest
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
+import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Build
+import android.os.Environment
+import android.provider.MediaStore
 import android.util.Log
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
@@ -37,7 +39,7 @@ fun showToastMessage(context: Context, message: String?) {
 }
 
 
-fun exportToExcel(products: List<ProductVO>, outputFile: File) : String {
+fun exportToExcel(products: List<ProductVO>, context: Context, uniqueId: Long) : String {
     val workbook: Workbook = XSSFWorkbook()
     val sheet: Sheet = workbook.createSheet("Product Data")
 
@@ -63,20 +65,38 @@ fun exportToExcel(products: List<ProductVO>, outputFile: File) : String {
         dataRow.createCell(6).setCellValue(product.remark)
     }
 
-    // Write the workbook content to a file
-    try {
-        FileOutputStream(outputFile).use { fileOut ->
-            workbook.write(fileOut)
-            return "Successfully exported"
+
+    // Save directory
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {   // for Android 10 (Q) and above
+        val contentValues = ContentValues().apply {
+            put(MediaStore.MediaColumns.DISPLAY_NAME, "$uniqueId product list.xlsx")
+            put(MediaStore.MediaColumns.MIME_TYPE, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
         }
-    } catch (e: IOException) {
-        e.printStackTrace()
-        return "Failed to export"
-    } finally {
+
+        val contentResolver = context.contentResolver
+        val uri = contentResolver.insert(MediaStore.Downloads.EXTERNAL_CONTENT_URI, contentValues)
+
+        uri?.let { documentUri ->
+            contentResolver.openOutputStream(documentUri)?.use { outputStream ->
+                workbook.write(outputStream)
+            }
+        }
+        return "Successfully exported"
+
+    } else {
+        val documentsDirectory = context.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS)
+        val outputFile = File(documentsDirectory, "$uniqueId product list.xlsx")
+
+        // Write the workbook content to a file
         try {
-            workbook.close()
+            FileOutputStream(outputFile).use { fileOut ->
+                workbook.write(fileOut)
+                return "Successfully exported"
+            }
         } catch (e: IOException) {
             e.printStackTrace()
+            Log.d("adfasfas", "${e.message}")
+            return "${e.message}"
         }
     }
 }
@@ -132,7 +152,7 @@ fun createNotificationWithAction(context: Context, title: String, content: Strin
         context,
         0,
         notificationIntent,
-        PendingIntent.FLAG_UPDATE_CURRENT
+        PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
     )
 
     val notificationBuilder = NotificationCompat.Builder(context, CHANNEL_ID)
@@ -151,3 +171,31 @@ fun createNotificationWithAction(context: Context, title: String, content: Strin
 }
 
 // ------------------------------------------------------------------------------------------------
+
+
+// Function to get filePath ------------------------------------------------------------------------------
+fun getFilePath(context: Context, uniqueId: String): String {
+    return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+        // Use MediaStore for Android 10 (Q) and above
+        val projection = arrayOf(MediaStore.MediaColumns.DATA)
+        val uri = MediaStore.Downloads.EXTERNAL_CONTENT_URI
+        val selection = "${MediaStore.MediaColumns.DISPLAY_NAME} = ?"
+        val selectionArgs = arrayOf("$uniqueId product list.xlsx")
+
+        context.contentResolver.query(uri, projection, selection, selectionArgs, null)?.use { cursor ->
+            if (cursor.moveToFirst()) {
+                val columnIndex = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DATA)
+                return cursor.getString(columnIndex)
+            }
+        }
+
+        // Default to a reasonable fallback if the query doesn't return a valid result
+        context.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)?.let {
+            File(it, "$uniqueId product list.xlsx").absolutePath
+        } ?: ""
+    } else {
+        // Use traditional file handling for versions before Android 10
+        val documentsDirectory = context.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS)
+        File(documentsDirectory, "$uniqueId product list.xlsx").absolutePath
+    }
+}
